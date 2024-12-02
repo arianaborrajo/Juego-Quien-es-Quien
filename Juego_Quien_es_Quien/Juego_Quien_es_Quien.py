@@ -2,7 +2,7 @@
 
 import reflex as rx
 
-from rxconfig import config
+from Juego_Quien_es_Quien.rxconfig import config
 
 
 class State(rx.State):
