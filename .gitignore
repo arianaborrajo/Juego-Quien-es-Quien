@@ -1,3 +1,5 @@
+assets/external/
+*.db
 
 assets
 .web
