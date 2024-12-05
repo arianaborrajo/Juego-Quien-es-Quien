@@ -8,7 +8,7 @@ import reflex as rx
 #from rxconfig import config
 from .state import State
 
-
+state = State(value="Estado inicial")
 #class State(rx.State):
  #   """The app state."""
 
@@ -16,38 +16,48 @@ from .state import State
 
 
 def index():
-    return rx.center(
-        rx.vstack(
-            rx.heading("¿Quién es Quién?", size="2"),
-            rx.text(State.mensaje, font_size="lg", margin_bottom="20px"),
+    return rx.box(
+        rx.input(
+            placeholder="Haz una pregunta (¿Tiene gafas? ¿Usa gorro?)",
+            value=State.value,  # Se conecta al estado
+            on_blur=State.responder_pregunta,  # Llama al método responder_pregunta
+        ),
+        rx.text(State.text),  # Muestra el mensaje del estado
+    )           
+    
+
+    #return rx.center(
+     #   rx.vstack(
+      #      rx.heading("¿Quién es Quién?", size="2"),
+       #     rx.text(state.text, font_size="lg", margin_bottom="20px"),
             
             # Campo para hacer preguntas
-            rx.hstack(
-                rx.input(
-                    placeholder="Haz una pregunta (¿Tiene gafas? ¿Usa gorro?)",
-                    on_blur=State.responder_pregunta,
-                ),
+        #    rx.hstack(
+        #        rx.input(
+        #            placeholder="Haz una pregunta (¿Tiene gafas? ¿Usa gorro?)",
+        #            on_blur=state.responder_pregunta,
+        #        ),
                 #rx.button("Enviar pregunta", on_click=lambda: rx.update(State.some_value)),
-            ),
+        #    ),
 
             # Campo para adivinar el personaje
-            rx.hstack(
-                rx.input(
-                    placeholder="Adivina el personaje (Ana, Luis, etc.)",
-                    on_blur=State.adivinar_personaje,
-                ),
+           # rx.hstack(
+            #    rx.input(
+             #       placeholder="Adivina el personaje (Ana, Luis, etc.)",
+              #      on_blur=state.adivinar_personaje,
+               # ),
                 #rx.button("Adivinar", on_click=lambda: None),
-            ),
+            #),
 
             # Botón para reiniciar el juego
-            rx.button("Reiniciar Juego", on_click=State.reiniciar_juego, color_scheme="blue"),
-        ),
-        padding="20px",
-        border="1px solid black",
-        border_radius="10px",
-        width="50%",
-        height="50%",
-    )
+           # rx.button("Reiniciar Juego", on_click=state.reiniciar_juego, color_scheme="blue"),
+        #),
+        #padding="20px",
+        #border="1px solid black",
+        #border_radius="10px",
+        #width="50%",
+        #height="50%",
+    #)
 
 app = rx.App()
 app.add_page(index)
