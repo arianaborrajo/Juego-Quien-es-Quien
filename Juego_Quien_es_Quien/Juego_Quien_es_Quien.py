@@ -5,6 +5,89 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import reflex as rx
+
+from .state import State
+
+
+def index():
+    return rx.center(
+        rx.vstack(
+            rx.heading("¿Quién es Quién?", size="2"),
+            rx.text(State.mensaje, font_size="lg", margin_bottom="20px"),
+            )
+    )
+
+def action_bar() -> rx.Component:
+    return rx.hstack(
+        rx.input(placeholder="Haz una pregunta"),
+        rx.button("Enviar"),
+    )
+
+
+'''def index() -> rx.Component:
+    return rx.container(
+        responder_pregunta(),
+        action_bar(),
+    )'''
+
+
+app = rx.App()
+app.add_page(index)
+
+
+
+
+
+
+
+
+
+'''# Campo para hacer preguntas
+            rx.hstack(
+                rx.input(
+                    placeholder="Haz una pregunta (¿Tiene gafas? ¿Usa gorro?)",
+                    on_blur=State.responder_pregunta,
+                ),
+                
+                #rx.button("Enviar pregunta", on_click=lambda: rx.update(State.some_value)),
+            ),'''
+
+
+
+'''# Campo para adivinar el personaje
+            rx.hstack(
+                rx.input(
+                    placeholder="Adivina el personaje (Ana, Luis, etc.)",
+                    on_blur=State.adivinar_personaje,
+                ),
+                #rx.button("Adivinar", on_click=lambda: None),
+            ),
+
+            # Botón para reiniciar el juego
+            rx.button("Reiniciar Juego", on_click=State.reiniciar_juego, color_scheme="blue"),
+        ),
+        padding="20px",
+        border="1px solid black",
+        border_radius="10px",
+        width="50%",
+        height="50%",'''
+
+
+
+
+
+
+
+
+
+
+'''import sys
+import os
+
+# Añadir la ruta del proyecto al sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+import reflex as rx
 #from rxconfig import config
 from .state import State
 
@@ -47,17 +130,17 @@ def index():
               #      on_blur=state.adivinar_personaje,
                # ),
                 #rx.button("Adivinar", on_click=lambda: None),
-            #),
+            ),
 
-            # Botón para reiniciar el juego
-           # rx.button("Reiniciar Juego", on_click=state.reiniciar_juego, color_scheme="blue"),
-        #),
-        #padding="20px",
-        #border="1px solid black",
-        #border_radius="10px",
-        #width="50%",
-        #height="50%",
-    #)
+             Botón para reiniciar el juego
+            rx.button("Reiniciar Juego", on_click=state.reiniciar_juego, color_scheme="blue"),
+        ),
+        padding="20px",
+        border="1px solid black",
+        border_radius="10px",
+        width="50%",
+        height="50%",
+    )
 
 app = rx.App()
 app.add_page(index)
@@ -91,4 +174,4 @@ app.add_page(index)
 
 
 #app = rx.App()
-#app.add_page(index)
+#app.add_page(index)'''
