@@ -12,3 +12,7 @@ def test_formato_tablero():
     columnas = len(tablero[0]) if filas > 0 else 0
     assert filas == 4 and columnas == 6, "El tablero no tiene el formato esperado."
 
+def test_tablero_vacio():
+    cartas = []
+    tablero = mostrar_tablero(cartas)
+    assert tablero == [], "El tablero no debería contener elementos si no hay cartas."
