@@ -25,13 +25,13 @@ respuesta_estilo = message_style | dict(
 )
 
 # Estilos para la barra de acciones.
-input_style = dict(
+entrada_estilo = dict(
     border_width="1px",
     padding="0.5em",
     box_shadow=shadow,
     width="350px",
 )
-button_style = dict(
+boton_estilo = dict(
     background_color=rx.color("accent", 10),
     box_shadow=shadow,
 )

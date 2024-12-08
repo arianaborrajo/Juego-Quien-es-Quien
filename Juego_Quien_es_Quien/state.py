@@ -6,7 +6,7 @@ import asyncio
 
 
 class State(rx.State):
-
+    
 
 # Lista de personajes y sus características
     personajes = [{"nombre": "Susan", "color_pelo": "blanco", "ojos" : "marrones", "nariz": "pequeña", "genero": "mujer", "gafas": False, "bigotes": False, "pelo": True, "barba": False, "gorro": False},
@@ -42,9 +42,7 @@ class State(rx.State):
     pregunta: str
     historial_juego: list[tuple[str, str]]
     personajes: list[dict] = []
-    nombre_personaje: str = "personaje"
     
-    #Iniciar partida
     def iniciar_partida(self):
         if self.personaje_oculto: 
             self.mensaje = "¡El Juego Ha Comenzado!"
@@ -62,12 +60,12 @@ class State(rx.State):
             return
         
         self.intentos += 1
-        
         if self.personaje_oculto["ojos"].lower() == pregunta.lower():
             respuesta = "Sí"
 
         elif self.personaje_oculto["nombre"].lower() == pregunta.lower():
             respuesta = "Sí"
+            self.mensaje = "¡Ganaste!"
 
         elif self.personaje_oculto["color_pelo"].lower() == pregunta.lower():
             respuesta = "Sí"
@@ -98,22 +96,16 @@ class State(rx.State):
         elif "gorro" in pregunta:
             respuesta = "Sí" if self.personaje_oculto["gorro"] else "No"
 
-        #else:
-            #respuesta = "Ningún personaje posee ese atributo."
-    
-        self.mensaje = f"Respuesta: {respuesta}"         
-        
-        self.pregunta = "" # Limpiar la pregunta
-       
-    
-
-    '''# Historial de pyr
+             
         self.historial_juego.append((self.pregunta, respuesta))
+        self.pregunta = "" # Limpiar la pregunta
+
+    # Historial de pyr
         for i in range(len(respuesta)):
             await asyncio.sleep(0.1)
             self.historial_juego[-1] = (
             self.historial_juego[-1][0],
             respuesta[: i + 1],
         )
-        yield'''
+        yield
 
