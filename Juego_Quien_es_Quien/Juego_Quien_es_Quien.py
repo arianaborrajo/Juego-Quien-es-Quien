@@ -1,177 +1,113 @@
-import sys
-import os
-
-# Añadir la ruta del proyecto al sys.path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
 import reflex as rx
 
 from .state import State
 
+
+from rxconfig import config
 
 def index():
     return rx.center(
         rx.vstack(
             rx.heading("¿Quién es Quién?", size="2"),
+            inicio_partida(),
             rx.text(State.mensaje, font_size="lg", margin_bottom="20px"),
-            )
-    )
-
-def action_bar() -> rx.Component:
-    return rx.hstack(
-        rx.input(placeholder="Haz una pregunta"),
-        rx.button("Enviar"),
-    )
-
-
-'''def index() -> rx.Component:
-    return rx.container(
-        responder_pregunta(),
-        action_bar(),
-    )'''
-
-
-app = rx.App()
-app.add_page(index)
-
-
-
-
-
-
-
-
-
-'''# Campo para hacer preguntas
-            rx.hstack(
-                rx.input(
-                    placeholder="Haz una pregunta (¿Tiene gafas? ¿Usa gorro?)",
-                    on_blur=State.responder_pregunta,
-                ),
-                
-                #rx.button("Enviar pregunta", on_click=lambda: rx.update(State.some_value)),
-            ),'''
-
-
-
-'''# Campo para adivinar el personaje
-            rx.hstack(
-                rx.input(
-                    placeholder="Adivina el personaje (Ana, Luis, etc.)",
-                    on_blur=State.adivinar_personaje,
-                ),
-                #rx.button("Adivinar", on_click=lambda: None),
+            cartas(),
+            juego(),
+            entrada_preguntas(),
+            align="center",
             ),
+            padding="20px",
+            border="1px solid black",
+            border_radius="10px",
+            width="100%",
+            height="100%",
+    )
 
-            # Botón para reiniciar el juego
-            rx.button("Reiniciar Juego", on_click=State.reiniciar_juego, color_scheme="blue"),
-        ),
-        padding="20px",
-        border="1px solid black",
-        border_radius="10px",
-        width="50%",
-        height="50%",'''
-
-
-
-
-
-
-
-
-
-
-'''import sys
-import os
-
-# Añadir la ruta del proyecto al sys.path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-import reflex as rx
-#from rxconfig import config
-from .state import State
-
-state = State(value="Estado inicial")
-#class State(rx.State):
- #   """The app state."""
-
-  #  ...
-
-
-def index():
+def pyr(pregunta: str, respuesta: str) -> rx.Component:
     return rx.box(
+        rx.box(pregunta, text_align="right"),
+        rx.box(respuesta, text_align="left"),
+        margin_y="1em"
+    )
+
+def inicio_partida() -> rx.Component:
+    return rx.hstack(
+        rx.button("Iniciar partida", 
+                on_click=State.iniciar_partida, 
+                on_blur=State.iniciar_partida,
+                color_scheme="blue"),
+    )
+
+def entrada_preguntas() -> rx.Component:
+    return rx.hstack(
         rx.input(
-            placeholder="Haz una pregunta (¿Tiene gafas? ¿Usa gorro?)",
-            value=State.value,  # Se conecta al estado
-            on_blur=State.responder_pregunta,  # Llama al método responder_pregunta
+            value=State.pregunta,
+            placeholder="Haz una pregunta",
+            on_change=State.set_pregunta,
+            on_blur=State.respuesta,
         ),
-        rx.text(State.text),  # Muestra el mensaje del estado
-    )           
+        rx.button("Enviar",
+                #on_click=State.respuesta,      
+        ),
+    )
     
 
-    #return rx.center(
-     #   rx.vstack(
-      #      rx.heading("¿Quién es Quién?", size="2"),
-       #     rx.text(state.text, font_size="lg", margin_bottom="20px"),
-            
-            # Campo para hacer preguntas
-        #    rx.hstack(
-        #        rx.input(
-        #            placeholder="Haz una pregunta (¿Tiene gafas? ¿Usa gorro?)",
-        #            on_blur=state.responder_pregunta,
-        #        ),
-                #rx.button("Enviar pregunta", on_click=lambda: rx.update(State.some_value)),
-        #    ),
-
-            # Campo para adivinar el personaje
-           # rx.hstack(
-            #    rx.input(
-             #       placeholder="Adivina el personaje (Ana, Luis, etc.)",
-              #      on_blur=state.adivinar_personaje,
-               # ),
-                #rx.button("Adivinar", on_click=lambda: None),
-            ),
-
-             Botón para reiniciar el juego
-            rx.button("Reiniciar Juego", on_click=state.reiniciar_juego, color_scheme="blue"),
-        ),
-        padding="20px",
-        border="1px solid black",
-        border_radius="10px",
-        width="50%",
-        height="50%",
+def juego() -> rx.Component:
+    return rx.box(
+        rx.foreach(
+            State.historial_juego,
+            lambda mensajes: pyr(mensajes[0], mensajes[1]),
+        )
     )
+
+def cartas() -> rx.Component:  
+    return rx.grid(
+        rx.foreach(
+            rx.Var.range(24),
+            lambda i: rx.card(State.nombre_personaje, height="10vh", width="auto"),
+                    ),
+                    rows="4",
+                    flow="column",
+                    justify="between",
+                    spacing="4",
+                    width="100%",
+                ),
+             
+
+'''def cartas() -> rx.Component:
+    return rx.grid(
+        rx.foreach(
+            personajes,
+            #rx.Var.range(24),
+            lambda carta: rx.card(
+                [rx.text("nombre: {personaje['nombre']}",font_weight="bold", font_size="16px"),],
+                height="15vh",  # Ajustamos la altura de las cartas
+                border="1px solid #000",  # Borde de la carta
+                border_radius="10px",  # Bordes redondeados
+                padding="10px",  # Espaciado interno
+                background_color="#f0f0f0",
+                ),
+        ),
+        rows="4",
+        flow="column",
+        justify="between",
+        spacing="4",
+        width="100%",
+    )'''
+
+'''def cartas() -> rx.Component:
+    return rx.grid(
+        rx.foreach(
+            rx.Var.range(24),
+            lambda i: rx.card(["nombre"],height="10vh"),
+                    ),
+                    rows="4",
+                    flow="column",
+                    justify="between",
+                    spacing="4",
+                    width="100%",
+                ),'''
+
 
 app = rx.App()
 app.add_page(index)
-
-
-
-
-
-#def index() -> rx.Component:
-    # Welcome Page (Index)
- #   return rx.container(
-  #      rx.color_mode.button(position="top-right"),
-   #     rx.vstack(
-    #        rx.heading("Welcome to Reflex!", size="9"),
-     #       rx.text(
-      #          "Get started by editing ",
-       #         rx.code(f"{config.app_name}/{config.app_name}.py"),
-        #        size="5",
-         #   ),
-          #  rx.link(
-           #     rx.button("Check out our docs!"),
-            #    href="https://reflex.dev/docs/getting-started/introduction/",
-             #   is_external=True,
-            #)
-            #spacing="5",
-            #justify="center",
-            #min_height="85vh",
-        #),
-        #rx.logo(),
-    #)
-
-
-#app = rx.App()
-#app.add_page(index)'''
