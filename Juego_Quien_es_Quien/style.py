@@ -4,11 +4,11 @@ import reflex as rx
 
 # Estilos comunes para preguntas y respuestas.
 shadow = "rgba(0, 0, 0, 0.15) 0px 2px 8px"
-chat_margin = "20%"
+chat_margin = "50%"
 message_style = dict(
     padding="1em",
     border_radius="5px",
-    margin_y="0.5em",
+    margin_y="1em",
     box_shadow=shadow,
     max_width="30em",
     display="inline-block",

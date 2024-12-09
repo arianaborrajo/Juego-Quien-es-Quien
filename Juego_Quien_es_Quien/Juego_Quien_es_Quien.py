@@ -36,7 +36,8 @@ def cartas() -> rx.Component:
     return rx.grid(
         rx.foreach(
             rx.Var.range(24),
-            lambda i: rx.card(f"Carta {i + 1}", height="10vh",)
+            lambda i: rx.card(rx.image(src="Alex.png", height="10vh",)
+                    ),
                     ),
                     rows="4",
                     flow="column",
@@ -49,7 +50,7 @@ def pyr(pregunta: str, respuesta: str) -> rx.Component:
     return rx.box(
         rx.box(pregunta, style=style.pregunta_estilo, text_align="right"),
         rx.box(respuesta, style=style.respuesta_estilo, text_align="left"),
-        margin_y="1em",
+        margin_y="1em", width="100%"
         
     )
 
@@ -67,10 +68,11 @@ def entrada_preguntas() -> rx.Component:
             value=State.pregunta,
             placeholder="Haz una pregunta",
             on_change=State.set_pregunta,
-            on_blur=State.respuesta,
             style=style.entrada_estilo,
         ),
-        rx.button("Enviar",      
+        rx.button("Enviar",
+                  on_click=State.respuesta,
+                  style=style.boton_estilo     
         ),
     )
 

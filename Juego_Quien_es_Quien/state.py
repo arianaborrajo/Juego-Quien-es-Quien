@@ -43,6 +43,7 @@ class State(rx.State):
     historial_juego: list[tuple[str, str]]
     personajes: list[dict] = []
     
+    
     def iniciar_partida(self):
         if self.personaje_oculto: 
             self.mensaje = "¡El Juego Ha Comenzado!"
@@ -54,46 +55,46 @@ class State(rx.State):
     
 
     @rx.event
-    async def respuesta(self, pregunta: str):
+    async def respuesta(self):
         if self.ganador:
             self.mensaje = "¡Ganaste!"
             return
         
         self.intentos += 1
-        if self.personaje_oculto["ojos"].lower() == pregunta.lower():
+        if self.personaje_oculto["ojos"].lower() == self.pregunta.lower():
             respuesta = "Sí"
 
-        elif self.personaje_oculto["nombre"].lower() == pregunta.lower():
+        elif self.personaje_oculto["nombre"].lower() == self.pregunta.lower():
             respuesta = "Sí"
             self.mensaje = "¡Ganaste!"
 
-        elif self.personaje_oculto["color_pelo"].lower() == pregunta.lower():
+        elif self.personaje_oculto["color_pelo"].lower() == self.pregunta.lower():
             respuesta = "Sí"
 
-        elif self.personaje_oculto["nariz"].lower() == pregunta.lower():
+        elif self.personaje_oculto["nariz"].lower() == self.pregunta.lower():
             respuesta = "Sí"
 
-        elif self.personaje_oculto["genero"].lower() == pregunta.lower():
+        elif self.personaje_oculto["genero"].lower() == self.pregunta.lower():
             respuesta = "Sí"
 
-        elif pregunta not in self.personaje_oculto: respuesta = "No" 
+        elif self.pregunta not in self.personaje_oculto: respuesta = "No" 
 
-        elif "gafas" in pregunta:
+        elif "gafas" in self.pregunta:
             respuesta = "Sí" if self.personaje_oculto["gafas"] else "No"
 
-        elif "bigotes" in pregunta:
+        elif "bigotes" in self.pregunta:
             respuesta = "Sí" if self.personaje_oculto["bigotes"] else "No"
 
-        elif "pelo" in pregunta:
+        elif "pelo" in self.pregunta:
             respuesta = "Sí" if self.personaje_oculto["pelo"] else "No"
 
-        elif "barba" in pregunta:
+        elif "barba" in self.pregunta:
             respuesta = "Sí" if self.personaje_oculto["barba"] else "No"
 
-        elif "ojos" in pregunta:
+        elif "ojos" in self.pregunta:
             respuesta = "Sí" if self.personaje_oculto["ojos"] else "No"
 
-        elif "gorro" in pregunta:
+        elif "gorro" in self.pregunta:
             respuesta = "Sí" if self.personaje_oculto["gorro"] else "No"
 
              
