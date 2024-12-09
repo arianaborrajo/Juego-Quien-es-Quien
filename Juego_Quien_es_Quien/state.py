@@ -40,27 +40,28 @@ class State(rx.State):
     intentos = 0
     juego_iniciado = False
     pregunta: str
-    historial_juego: list[tuple[str, str]]
+    historial_juego: list[tuple[str, str]] #creo que aqui se conectan las imagenes
     personajes: list[dict] = []
     
     def iniciar_partida(self):
         if self.personaje_oculto: 
             self.mensaje = "¡El Juego Ha Comenzado!"
             self.ganador = False
-            return
+        
+            return 
         
         self.juego_iniciado : False
         self.intentos: 0
     
 
     @rx.event
-    async def respuesta(self, pregunta: str):
+    async def respuesta(self, pregunta: str): #borrar pregunta
         if self.ganador:
             self.mensaje = "¡Ganaste!"
             return
         
         self.intentos += 1
-        if self.personaje_oculto["ojos"].lower() == pregunta.lower():
+        if self.personaje_oculto["ojos"].lower() == pregunta.lower(): #self.pregunta
             respuesta = "Sí"
 
         elif self.personaje_oculto["nombre"].lower() == pregunta.lower():

@@ -36,7 +36,9 @@ def cartas() -> rx.Component:
     return rx.grid(
         rx.foreach(
             rx.Var.range(24),
-            lambda i: rx.card(f"Carta {i + 1}", height="10vh",)
+            lambda i: rx.card(
+                rx.image(src="Alex.png", height="10vh"),
+                    ),
                     ),
                     rows="4",
                     flow="column",
@@ -67,10 +69,11 @@ def entrada_preguntas() -> rx.Component:
             value=State.pregunta,
             placeholder="Haz una pregunta",
             on_change=State.set_pregunta,
-            on_blur=State.respuesta,
+            on_blur=State.respuesta, #tutorial
             style=style.entrada_estilo,
         ),
-        rx.button("Enviar",      
+        rx.button("Enviar",
+                  #on_click=State.pregunta      
         ),
     )
 
