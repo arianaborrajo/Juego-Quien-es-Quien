@@ -137,7 +137,7 @@ En resumen, el backend se comunica con el frontend a través de Reflex, actualiz
 
 **Análisis del tiempo invertido**
     **Clockify + Wakatime**
-   ![Logo del proyecto](tokens.png)
+   ![Diseño sin título.jpg](<attachment:Diseño sin título.jpg>)
 
 **Justificación temporal**
 El desarrollo del proyecto de "¿Quién es Quién?" fue un proceso que se extendió durante dos semanas. Al principio, al ser estudiantes de primero de DAM con conocimientos básicos en Python, nos encontramos con varias dificultades que nos obstacularizaron el inicio del proyecto, por lo que iba con retraso. Durante la primera semana, las primeras horas fueron particularmente difíciles, ya que no sabíamos exactamente cómo empezar ni por dónde enfocar el proyecto. A pesar de que el enunciado del proyecto estaba claro, nos resultaba complicado entender cómo organizar y dividir el trabajo entre el backend y el frontend, especialmente porque estábamos usando Reflex sin experiencia previa, pero gracias a organizarnos con las historias de usuario y a informarnos en las clases siguientes pudimos comenzar a trabajar en casa.
