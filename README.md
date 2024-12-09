@@ -130,10 +130,10 @@ En cuanto a la estructura del backend esta dividida en modelo y lógica, en el m
 El frontend es la parte visible del juego para el usuario. Está implementado utilizando Reflex. Las Funcionalidades principales que engloba son la interfaz de preguntas para que el usuario pueda realizar las preguntas, la visualización de las cartas al inicio del juego e ir ocultando las cartas que no coinciden.
 En resumen, el backend se comunica con el frontend a través de Reflex, actualizando la vista con las respuestas a las preguntas del usuario. El frontend envía las preguntas del usuario al backend y muestra las respuestas correspondientes, actualizando la visualización de las cartas.<br/>
 
-![grafica](grafica.jpg)
+
 **Análisis del tiempo invertido**
     **Clockify + Wakatime**
-  
+  ![grafica.png](<attachment:grafica.jpg>)
 
 
 **Justificación temporal**<br/>
