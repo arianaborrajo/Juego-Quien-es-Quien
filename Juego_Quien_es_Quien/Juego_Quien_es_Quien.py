@@ -35,10 +35,9 @@ def inicio_partida() -> rx.Component:
 def cartas() -> rx.Component:
     return rx.grid(
         rx.foreach(
-            rx.Var.range(24),
+            State.nombre,
             lambda i: rx.card(
-                rx.image(src="Alex.png", height="10vh"),
-                    ),
+                rx.image(src=f"{i}.png", height="10vh"),)
                     ),
                     rows="4",
                     flow="column",

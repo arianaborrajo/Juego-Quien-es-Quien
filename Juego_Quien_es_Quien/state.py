@@ -34,6 +34,8 @@ class State(rx.State):
 {"nombre": "Charles", "color_pelo": "amarillo", "ojos" : "marrones", "nariz": "pequeña", "genero": "hombre", "gafas": False, "bigotes": True, "pelo": True, "barba": False, "gorro": False},
 {"nombre": "Peter", "color_pelo": "blanco", "ojos" : "azules", "nariz": "grande", "genero": "hombre", "gafas": False, "bigotes": False, "pelo": True, "barba": False, "gorro": False}
 ]
+    nombre = ["Susan", "Claire","David","Anne", "Robert", "Anita", "Joe", "George", "Bill", "Alfred", "Max", "Tom", "Alex", "Sam", 
+              "Richard", "Paul", "Maria", "Frans", "Herman", "Bernard", "Philip", "Eric", "Charles", "Peter"]
     personaje_oculto = random.choice(personajes)
     mensaje = ""
     ganador = False
@@ -42,6 +44,8 @@ class State(rx.State):
     pregunta: str
     historial_juego: list[tuple[str, str]] #creo que aqui se conectan las imagenes
     personajes: list[dict] = []
+    
+   
     
     def iniciar_partida(self):
         if self.personaje_oculto: 
