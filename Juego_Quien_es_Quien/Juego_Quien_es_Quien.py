@@ -28,7 +28,6 @@ def inicio_partida() -> rx.Component:
     return rx.hstack(
         rx.button("Iniciar partida", 
                 on_click=State.iniciar_partida, 
-                on_blur=State.iniciar_partida,
                 color_scheme="blue"),
     )
 

@@ -2,7 +2,7 @@ import reflex as rx
 
 import random
 
-import asyncio
+
 
 
 class State(rx.State):
@@ -23,7 +23,7 @@ class State(rx.State):
         {"nombre": "Alex", "color_pelo": "marron", "ojos" : "marrones", "nariz": "pequeña", "genero": "hombre", "gafas": False, "bigotes": True, "pelo": True, "barba": False, "gorro": False},
         {"nombre": "Sam", "color_pelo": "blanco", "ojos" : "marrones", "nariz": "pequeña", "genero": "hombre", "gafas": True, "bigotes": False, "pelo": False, "barba": False, "gorro": False},
         {"nombre": "Richard", "color_pelo": "marron", "ojos" : "marrones", "nariz": "pequeña", "genero": "hombre", "gafas": False, "bigotes": True, "pelo": False, "barba": True, "gorro": False},
-        {"nombre": "Paul", "colo_pelo": "blanco", "ojos" : "marrones", "nariz": "pequeña", "genero": "hombre", "gafas": True, "bigotes": False, "pelo": True, "barba": False, "gorro": False},
+        {"nombre": "Paul", "color_pelo": "blanco", "ojos" : "marrones", "nariz": "pequeña", "genero": "hombre", "gafas": True, "bigotes": False, "pelo": True, "barba": False, "gorro": False},
         {"nombre": "Maria", "color_pelo": "marron", "ojos" : "marrones", "nariz": "pequeña", "genero": "mujer", "gafas": False, "bigotes": False, "pelo": True, "barba": False, "gorro": True},
         {"nombre": "Frans", "color_pelo": "rojo", "ojos" : "marrones", "nariz": "pequeña", "genero": "hombre", "gafas": False, "bigotes": False, "pelo": True, "barba": False, "gorro": False},
         {"nombre": "Herman", "color_pelo": "rojo", "ojos" : "marrones", "nariz": "grande", "genero": "hombre", "gafas": False, "bigotes": False, "pelo": False, "barba": False, "gorro": False},
@@ -59,8 +59,8 @@ class State(rx.State):
         
     
 
-    @rx.event
-    async def respuesta(self):
+   
+    def respuesta(self):
         if self.ganador:
             self.mensaje = "¡Ganaste!"
             return
@@ -96,9 +96,6 @@ class State(rx.State):
         elif "barba" in self.pregunta:
             respuesta = "Sí" if self.personaje_oculto["barba"] else "No"
 
-        elif "ojos" in self.pregunta:
-            respuesta = "Sí" if self.personaje_oculto["ojos"] else "No"
-
         elif "gorro" in self.pregunta:
             respuesta = "Sí" if self.personaje_oculto["gorro"] else "No"
 
@@ -107,12 +104,6 @@ class State(rx.State):
         self.pregunta = "" 
 
     
-        for i in range(len(respuesta)):
-            await asyncio.sleep(0.1)
-            self.historial_juego[-1] = (
-            self.historial_juego[-1][0],
-            respuesta[: i + 1],
-        )
-        yield
+    
 
 
