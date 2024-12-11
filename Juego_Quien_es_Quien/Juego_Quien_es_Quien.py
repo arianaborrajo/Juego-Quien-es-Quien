@@ -37,9 +37,9 @@ def cartas() -> rx.Component:
         rx.foreach(
             State.nombre,
             lambda i: rx.card(
-                rx.image(src=f"{i}.png", height="10vh"),)
+                rx.image(src=f"{i}.png", height="20vh"),)
                     ),
-                    rows="4",
+                    rows="3",
                     flow="column",
                     justify="between",
                     spacing="4",
@@ -76,5 +76,7 @@ def entrada_preguntas() -> rx.Component:
         ),
     )
 
+        
+       
 app = rx.App()
 app.add_page(index)

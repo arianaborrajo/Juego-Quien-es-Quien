@@ -7,12 +7,8 @@ import asyncio
 
 class State(rx.State):
 
-    def __init__(self):
 
-    
-
-        # Lista de personajes y sus características
-            self.personajes = [{"nombre": "Susan", "color_pelo": "blanco", "ojos" : "marrones", "nariz": "pequeña", "genero": "mujer", "gafas": False, "bigotes": False, "pelo": True, "barba": False, "gorro": False},
+    personajes = [{"nombre": "Susan", "color_pelo": "blanco", "ojos" : "marrones", "nariz": "pequeña", "genero": "mujer", "gafas": False, "bigotes": False, "pelo": True, "barba": False, "gorro": False},
         {"nombre": "Claire", "color_pelo": "rojo", "ojos" : "marrones", "nariz": "pequeña", "genero": "mujer", "gafas": True, "bigotes": False, "pelo": True, "barba": False, "gorro": True},
         {"nombre": "David", "color_pelo": "amarillo", "ojos" : "marrones", "nariz": "pequeña", "genero": "hombre", "gafas": False, "bigotes": False, "pelo": True, "barba": True, "gorro": False},
         {"nombre": "Anne", "color_pelo": "marrón", "ojos" : "marrones", "nariz": "grande", "genero": "mujer", "gafas": False, "bigotes": False, "pelo": True, "barba": False, "gorro": False},
@@ -37,19 +33,20 @@ class State(rx.State):
         {"nombre": "Charles", "color_pelo": "amarillo", "ojos" : "marrones", "nariz": "pequeña", "genero": "hombre", "gafas": False, "bigotes": True, "pelo": True, "barba": False, "gorro": False},
         {"nombre": "Peter", "color_pelo": "blanco", "ojos" : "azules", "nariz": "grande", "genero": "hombre", "gafas": False, "bigotes": False, "pelo": True, "barba": False, "gorro": False}
         ]
-            self.nombre = ["Susan", "Claire","David","Anne", "Robert", "Anita", "Joe", "George", "Bill", "Alfred", "Max", "Tom", "Alex", "Sam", 
+
+    nombre = ["Susan", "Claire","David","Anne", "Robert", "Anita", "Joe", "George", "Bill", "Alfred", "Max", "Tom", "Alex", "Sam", 
                     "Richard", "Paul", "Maria", "Frans", "Herman", "Bernard", "Philip", "Eric", "Charles", "Peter"]
-            self.personaje_oculto = {}
-            self.mensaje = ""
-            self.ganador = False
-            self.intentos = 0
-            self.juego_iniciado = False
-            self.pregunta: str
-            self.historial_juego: list[tuple[str, str]] 
-            self.personajes: list[dict] = []
+    personaje_oculto = random.choice(personajes)
+    mensaje = ""
+    ganador = False
+    intentos = 0
+    juego_iniciado = False
+    pregunta: str 
+    historial_juego: list[tuple[str, str]] 
+    personajes: list[dict] = []       
+                   
             
-    def elegir_personaje(self):
-        self.personaje_oculto = random.choice(self.personajes)
+    
 
     def iniciar_partida(self):
         if self.personaje_oculto: 
@@ -57,9 +54,9 @@ class State(rx.State):
             self.ganador = False
         
             return 
-        
         self.juego_iniciado : False
         self.intentos: 0
+        
     
 
     @rx.event
@@ -107,9 +104,9 @@ class State(rx.State):
 
              
         self.historial_juego.append((self.pregunta, respuesta))
-        self.pregunta = "" # Limpiar la pregunta
+        self.pregunta = "" 
 
-    # Historial de pyr
+    
         for i in range(len(respuesta)):
             await asyncio.sleep(0.1)
             self.historial_juego[-1] = (
@@ -117,4 +114,5 @@ class State(rx.State):
             respuesta[: i + 1],
         )
         yield
+
 
