@@ -62,12 +62,12 @@ In scope<br/>
 Función para elegir carta aleatoria.
 Mostrar el tablero.
 Ingresar características de los personajes.
-Ocultar cartas que no coinciden con las características.
 Confirmar si el jugador gano perdió la partida. <br/>
 Out scope<br/>
+Ocultar cartas que no coinciden con las características.
 Tiempo de respuesta para adivinar
 Numero de intentos para adivinar.
-Interfaz gráfica más compleja.<br/>
+Casos test.<br/>
 Unresolved<br/>
     Guardar historial de partidas
 	Multijugador.
