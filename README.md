@@ -59,17 +59,17 @@ Además, la lógica del juego se estructura en Modelo Vista Controlador. El MVC 
 **Requisitos funcionales/no funcionales, NOT LIST**<br/>
 La not list que elaboramos al inicio del proyecto se basa en:
 In scope<br/>
-Función para elegir carta aleatoria.
-Mostrar el tablero.
-Ingresar características de los personajes.
+Función para elegir carta aleatoria.<br/>
+Mostrar el tablero.<br/>
+Ingresar características de los personajes.<br/>
 Confirmar si el jugador gano perdió la partida. <br/>
 Out scope<br/>
-Ocultar cartas que no coinciden con las características.
-Tiempo de respuesta para adivinar
-Numero de intentos para adivinar.
+Ocultar cartas que no coinciden con las características.<br/>
+Tiempo de respuesta para adivinar<br/>
+Numero de intentos para adivinar.<br/>
 Casos test.<br/>
 Unresolved<br/>
-    Guardar historial de partidas
+    Guardar historial de partidas<br/>
 	Multijugador.
 
 **Historias de usuaria**<br/>
