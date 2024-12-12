@@ -28,7 +28,7 @@
     -   [**Dificultades**](#dificultades)
 
 
-**Introducción**<br/>
+##Introducción##<br/>
 En el juego "Quién es Quién" dos personas tienen que adivinar el personaje de su oponente. Cada jugador cuenta con un tablero con diferentes personajes y debe hacer preguntas para ir eliminando opciones hasta dar con el.
 
 **Manual** <br/>
@@ -38,12 +38,18 @@ En el juego "Quién es Quién" dos personas tienen que adivinar el personaje de 
 3- Disponer de un editor de código como VSCode<br/>
 
 **Instalación**<br/>
-Una vez instalado vscode y python desde la pagina oficial, se descarga el repositorio con la aplicación desde nuestro github. Dentro de la terminal que dispone VSCode cocamos el repositorio con el comando git clone [https://github.com/arianaborrajo/Juego-Quien-es-Quien.git]. A continuación creamos y activamos un entorno virtual usando venv y desde ahi ejecutamos en la terminal el comando pip install reflex para instalar reflex. Luego lo ejecutamos con run reflex y vemos la aplicación con http://localhost:3000.
+1-Una vez instalado vscode y python desde la pagina oficial, se descarga el repositorio con la aplicación desde nuestro github. <br/>
+
+2-Dentro de la terminal que dispone VSCode cocamos el repositorio con el comando git clone [https://github.com/arianaborrajo/Juego-Quien-es-Quien.git].<br/>
+
+3-A continuación creamos y activamos un entorno virtual usando venv y desde ahi ejecutamos en la terminal el comando pip install reflex para instalar reflex.<br/>
+
+4- Luego lo ejecutamos con run reflex y vemos la aplicación con http://localhost:3000.
 
 **Uso**<br/>
-El juego "¿Quién es quién?" está diseñado para que el usuario adivine el personaje que la máquina ha seleccionado. La máquina seleccionará un personaje al azar al inicio del juego y responderá únicamente a las preguntas del usuario. Estos pasos para jugar: <br/>
-Primero de todo, ejecuta el proyecto siguiendo los pasos del apartado instalación. Una vez iniciado la máquina seleccionará un personaje secreto de forma aleatoria entre las cartas disponibles.
-Puedes formular preguntas sobre las características de los personajes, las cuales la máquina responderá. Según las respuestas de la máquina, se descartan las cartas que no coincidan con las características. Cuando creas saber quién es el personaje secreto, haz tu elección. En caso de acertar, se gana la partida. Si no, puedes volver a intentarlo. Al finalizar, puedes reiniciar la aplicación para jugar nuevamente con un personaje diferente.
+El juego "¿Quién es quién?" está diseñado para que el usuario adivine el personaje que la máquina ha seleccionado. La máquina seleccionará un personaje al azar al inicio del juego y responderá únicamente a las preguntas del usuario. Estos pasos para jugar: <br/><br/>
+Primero de todo, ejecuta el proyecto siguiendo los pasos del apartado instalación. Una vez iniciado la máquina seleccionará un personaje secreto de forma aleatoria entre las cartas disponibles.<br/>
+Puedes formular preguntas sobre las características de los personajes, las cuales la máquina responderá. Según las respuestas de la máquina, se descartan las cartas que no coincidan con las características. Cuando creas saber quién es el personaje secreto, haz tu elección. <br/>En caso de acertar, se gana la partida. Si no, puedes volver a intentarlo. Al finalizar, puedes reiniciar la aplicación para jugar nuevamente con un personaje diferente.
 
 **Metodología:** <br/>
 Desde el inicio del proyecto, adoptamos una metodología organizada para poder alcanzar los objetivos del proyecto. El primer día dedicamos tiempo a identificar las metas principales del proyecto y a dividirlas en tareas más pequeñas que pudieran cumplirse diariamente. Esto lo organizamos en una not list en papel, donde escribimos los objetivos que queríamos evitar y las tareas pendientes por día. Esto nos ayudó evitar acumulaciones de trabajo aunque finalmente el tiempo no nos sobro. 
@@ -64,10 +70,10 @@ Mostrar el tablero.<br/>
 Ingresar características de los personajes.<br/>
 Confirmar si el jugador gano perdió la partida. <br/>
 Out scope<br/>
-Ocultar cartas que no coinciden con las características.<br/>
 Tiempo de respuesta para adivinar<br/>
+Ocultar cartas que no coincidan con características.<br/>
 Numero de intentos para adivinar.<br/>
-Casos test.<br/>
+Interfaz gráfica más compleja.<br/>
 Unresolved<br/>
     Guardar historial de partidas<br/>
 	Multijugador.
@@ -86,8 +92,8 @@ La carta no se muestra a la jugadora.
 Cada carta sale elegida aproximadamente el mismo numero de veces que el resto.
 
 
-**Quién** jugador,<br/>
-**Qué** preguntar las características del personaje <br/>
+**Como** jugador,<br/>
+**Quiero** preguntar las características del personaje <br/>
 **Para** descartar personajes y poder adivinar.<br/>
 
 **Criterios de aceptación:**
@@ -96,8 +102,8 @@ La aplicación debe permitir hacer preguntas predefinidas para poder descartar o
 La máquina debe responder las preguntas para poder descartar.
 En función de las respuestas, bajar los personajes descartandolos para poder adivinar.
 
-**Quién** jugador,<br/>
-**Qué** adivinar el personaje de la maquina,<br/>
+**Como** jugador,<br/>
+**Quiero** adivinar el personaje de la maquina,<br/>
 **Para** ganar.<br/>
 
 **Criterios de aceptación:**
@@ -105,66 +111,54 @@ En función de las respuestas, bajar los personajes descartandolos para poder ad
 Cuando queden pocos personajes se permite en lugar de hacer preguntas, adivinar directamente.
 Si solo quedan dos personajes es obligatorio adivinar.
 Si es correcta la respuesta, el  usuario gana.
-Si es incorrecta la respuesta, el usuario pierde y ganaría la máquina.
+Si es incorrecta la respuesta, el usuario pierde y ganaría la máquina.<br/>
 
 **Arquitectura de la aplicación**
-Arquitectura de la Aplicación
-La aplicación **Juego ¿Quién es Quién?** está organizada utilizando el framework
+La aplicación &quot;Juego ¿Quién es Quién?&quot; está organizada utilizando el framework
 Reflex para construir interfaces dinámicas y reactivas. A continuación, se describe la
-arquitectura y los componentes principales:
-
-1. Estructura de Carpetas
-assets                      # Archivos estáticos (imágenes).
-__init__.py                 # Inicialización del módulo principal.
-Juego_Quien_es_Quien.py     # Componentes de la interfaz de usuario.
-state.py                    # Lógica del estado y eventos.
-style.py                    # Color y estilos para los componentes del interfaz.
-venv/                       # Entorno virtual
-README.md                   # Documentación del proyecto
-Requirements.tx.            # Dependencias.
-rxconfig.py                 # Configuración global de Reflex.
-
-
-2. Componentes Principales
-a. Estado de la Aplicación (state.py)
+arquitectura y los componentes principales:<br/>
+1. Estructura de Carpetas<br/>
+assets # Archivos estáticos (imágenes).<br/>
+__init__.py # Inicialización del módulo principal.<br/>
+Juego_Quien_es_Quien.py # Componentes de la interfaz de usuario.<br/>
+state.py # Lógica del estado y eventos.<br/>
+style.py # Color y estilos para los componentes del
+interfaz.<br/>
+venv/ # Entorno virtual<br/>
+README.md # Documentación del proyecto<br/>
+Requirements.tx. # Dependencias.<br/>
+rxconfig.py # Configuración global de Reflex.<br/>
+2. Componentes Principales<br/>
+a. Estado de la Aplicación (state.py)<br/>
 Este archivo define el estado central de la aplicación utilizando las herramientas de
-Reflex. Aquí se manejan:
+Reflex. Aquí se manejan:<br/>
  Variables de estado: Contiene la definición de los personajes y sus atributos
 en formato de una lista de diccionarios. La variable del personaje oculto con
 la ejecución. Un mensaje vacío para que pueda ser utilizado y modificado.
-Ganador False ya que el jugador comienza el juego no siendo un ganador.
-Intentos /juego iniciado false/ pregunta str /historial y personajes*por definir
+Ganador False ya que el jugador comienza el juego no siendo un ganador.<br/>
+
 
  Eventos: Da inicio a una partida, selecciona un personaje al azar, arroja un
 mensaje para darle inicio al juego. Gestionan la interacción del usuario, como
 hacer preguntas y obtener respuestas. Organiza las pregunta y respuestas en
-un historial tipo chat.
+un historial tipo chat.<br/>
 
 b. Interfaz de Usuario (Juego_Quien_es_Quien.py)
 Este archivo contiene los componentes de la interfaz organizados en páginas. Se
-utiliza la biblioteca Reflex para crear elementos interactivos, como:
- Título del juego
- Botón que da inicio a la partida
- Mensaje para dar aviso del inicio
- Tablero con las cartas
- Historial de preguntas y respuestas
- Casilla de entrada para realizar las preguntas
- Botón de enviar pregunta
+utiliza la biblioteca Reflex para crear elementos interactivos, como:<br/>
+ Título del juego<br/>
+ Botón que da inicio a la partida<br/>
+ Mensaje para dar aviso del inicio<br/>
+ Tablero con las cartas<br/>
+ Historial de preguntas y respuestas<br/>
+ Casilla de entrada para realizar las preguntas<br/>
+ Botón de enviar pregunta<br/>
 
-c. Estilo de los Componentes (style.py)
+c. Estilo de los Componentes (style.py)<br/>
 Definición de color, tamaño y estilo de las preguntas y respuestas, casilla de entrada
-de preguntas y botón de enviar.
-
-3. Flujo de la Aplicación
-1. Inicio: El usuario accede a la página principal y visualiza a todos los
-personajes en una tabla.
-2. Interacción: El usuario hace clic en el botón de iniciar partida y le arroja el
-mensaje “Ha comenzado el juego”. Realiza preguntas sobre las características
-del personaje oculto utilizando un campo de entrada.
-3. Respuesta: La lógica del estado determina si la respuesta a la pregunta es
-"Sí" o "No" y responde al chat del juego.
+de preguntas y botón de enviar.<br/>
 **Diseño**
-    **Diagrama de Componentes**
+    **Diagrama de Componentes**<br/><br/>
 **Implementacion**
     **Tecnologías y Herramientas utilizadas**
 
@@ -182,13 +176,13 @@ El backend está diseñado para gestionar la lógica del juego. Esta capa es el 
 En cuanto a la estructura del backend esta dividida en modelo y lógica, en el modelo se almacena la lista de personajes y sus características definidas en la lista, mientras que la lógica contiene las funciones para procesar las preguntas y descartan las cartas que no se identifiquen con las caracterisitas dadas.<br/>
 
 **Frontend**<br/>
-El frontend es la parte visible del juego para el usuario. Está implementado utilizando Reflex. Las Funcionalidades principales que engloba son la interfaz de preguntas para que el usuario pueda realizar las preguntas, la visualización de las cartas al inicio del juego e ir ocultando las cartas que no coinciden.
+El frontend es la parte visible del juego para el usuario. Está implementado utilizando Reflex. Las Funcionalidades principales que engloba son la interfaz de preguntas para que el usuario pueda realizar las preguntas y la visualización de las cartas al inicio del juego .<br/>
 En resumen, el backend se comunica con el frontend a través de Reflex, actualizando la vista con las respuestas a las preguntas del usuario. El frontend envía las preguntas del usuario al backend y muestra las respuestas correspondientes, actualizando la visualización de las cartas.<br/>
 
 
 **Análisis del tiempo invertido**
     **Clockify + Wakatime**
-  ![graficaTrabajo.png](./assets/gráficaTrabajo.png)
+  ![grafica.png](<attachment:grafica.jpg>)
 
 
 **Justificación temporal**<br/>
@@ -214,8 +208,8 @@ A pesar de los logros alcanzados, este proyecto también ha permitido identifica
 
 **Posibles mejoras**<br/>
 Hay varias áreas en las que podemos mejorar proximamente: Mejorar la parte gráfica; el juego se basa en una interfaz sencilla, pero se podría añadir una interfaz más visual, se podría incluir limite de tiempo de preguntar para agilizar el juego o limite de intentos para darle más dinámica, además de incluir más características a los personajes para hacer preguntas más variadas y especificas sobre los personajes.
-
+Además de que, a pesar del tiempo invertido, no fuimos capaces de tener casos test al no reconocernos la ruta.<br/>
 
 **Dificultades**<br/>
 A lo largo del desarrollo del proyecto, nos encontramos con varios desafíos que nos ayudaron a aumentar nuestros conocimientos. Algunas de las principales dificultades fueron que al principio nos costó comprender cómo organizar el proyecto correctamente, esto nos resto tiempo que hizo que se nos acumulara el trabajo y aprender a utilizar de manera practica los conceptos estudiados en clase y aplicarlos a un proyecto. <br/>
-Por otro lado, al trabajar en git, se nos presentaron múltiples problemas con las ramas porque no sabíamos gestionarlas ni bajarlas a remoto y no queríamos perder los cambios de ninguna. Relacionada con esta dificultad, nos costó un poco acostumbrarnos a la práctica de hacer commits frecuentes y bien estructurados, cometimos algunos errores en cuanto al uso de commits, ya que nos daba bastantes errores a las dos al intentar subirlos a github tanto en clase como en casa. 
+Por otro lado, al trabajar en git, se nos presentaron múltiples problemas con las ramas porque no sabíamos gestionarlas ni bajarlas a remoto y no queríamos perder los cambios de ninguna. Relacionada con esta dificultad, nos costó un poco acostumbrarnos a la práctica de hacer commits frecuentes y bien estructurados, cometimos algunos errores en cuanto al uso de commits, ya que nos daba bastantes errores a las dos al intentar subirlos a github tanto en clase como en casa.
