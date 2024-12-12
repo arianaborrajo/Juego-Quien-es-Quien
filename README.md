@@ -186,7 +186,7 @@ En resumen, el backend se comunica con el frontend a través de Reflex, actualiz
 
 # Análisis del tiempo invertido
 # Clockify + Wakatime
-  ![grafica.png](README.md\assets\gráficaTrabajo.png)
+  ![grafica.png](README.md\imagenes\gráficaTrabajo.png)
 
 
 # Justificación temporal<br/>
