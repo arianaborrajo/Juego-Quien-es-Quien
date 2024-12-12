@@ -2,7 +2,7 @@ import reflex as rx
 
 from .state import State
 
-from juego_Quien_es_Quien import style
+from juego_quien_es_quien import style
 
 from rxconfig import config
 

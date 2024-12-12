@@ -188,7 +188,7 @@ En resumen, el backend se comunica con el frontend a través de Reflex, actualiz
 
 **Análisis del tiempo invertido**
     **Clockify + Wakatime**
-  ![graficaTrabajo.png](./Juego_Quien_es_Quien/gráficaTrabajo.png)
+  ![graficaTrabajo.png](./assets/gráficaTrabajo.png)
 
 
 **Justificación temporal**<br/>
