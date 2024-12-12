@@ -7,13 +7,13 @@
     -   [**Uso**](#uso)
 -   [**Metodología**](#metodología)
 -   [**Descripción técnica**](#descripción-técnica)
-    -   [**Requisitos funcionales/no funcionales, NOT LIST**](#partes-interesadas-y-requisitos-funcionalesno-funcionales)
+    -   [**Requisitos funcionales/no funcionales, NOT LIST**](#requisitos-funcionales/no-funcionales-,-NOT-LIST)
     -   [**Historias de usuaria**](#historias-de-usuaria)
     -   [**Arquitectura de la aplicación**](#arquitectura-de-la-aplicación)
 -   [**Diseño**](#diseño)
-    -   [**Diagrama de Componentes**](#componentes)
+    -   [**Diagrama de Componentes**](#diagrama-de.componentes)
 -   [**Implementacion**](#implementacion)
-    -   [**Tecnologías y Herramientas utilizadas**](#tecnologías-y-herramientas-elegidas)
+    -   [**Tecnologías y Herramientas utilizadas**](#tecnologías-y-herramientas-utilizadas)
     -   [**Backend**](#backend)
     -   [**Frontend**](#frontend)
 -   [**Pruebas**](#pruebas)
@@ -21,7 +21,7 @@
     -   [**Test de unidad**](#test-de-unidad)
     -   [**Test de integración**](#test-de-integración)
 -   [**Análisis del tiempo invertido**](#Tiempo-invertido)
-    -   [**Clockify + Wakatime**](#clockify)
+    -   [**Clockify + Wakatime**](#Clockify-+-Wakatime)
     -   [**Justificación temporal**](#justificación-temporal)
 -   [**Conclusiones**](#conclusiones)
     -   [**Posibles mejoras**](#posibles-mejoras)
@@ -180,12 +180,15 @@ En cuanto a la estructura del backend esta dividida en modelo y lógica, en el m
 El frontend es la parte visible del juego para el usuario. Está implementado utilizando Reflex. Las Funcionalidades principales que engloba son la interfaz de preguntas para que el usuario pueda realizar las preguntas y la visualización de las cartas al inicio del juego .<br/>
 En resumen, el backend se comunica con el frontend a través de Reflex, actualizando la vista con las respuestas a las preguntas del usuario. El frontend envía las preguntas del usuario al backend y muestra las respuestas correspondientes, actualizando la visualización de las cartas.<br/>
 
-# Pruebas
-# Coverage
-# Test de unidad
-# Test de integración<br/><br/>
-
-# Análisis del tiempo invertido
+# Pruebas<br/>
+*Pendiente*
+# Coverage<br/>
+*Pendiente*
+# Test de unidad<br/>
+*Pendiente*
+# Test de integración<br/>
+*Pendiente*
+# Análisis del tiempo invertido<br/>
 # Clockify + Wakatime
   ![grafica.png](imagenes/gráficaTrabajo.png)
 
