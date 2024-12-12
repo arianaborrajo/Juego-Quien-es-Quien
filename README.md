@@ -7,7 +7,7 @@
     -   [**Uso**](#uso)
 -   [**Metodología**](#metodología)
 -   [**Descripción técnica**](#descripción-técnica)
-    -   [**Requisitos funcionales/no funcionales, NOT LIST**](#Requisitos-funcionales-/-no-funcionales-,-NOT-LIST)
+    -   [**Requisitos funcionales y no funcionales NOT LIST**](#requisitos-funcionales-y-no-funcionales-not-list)
     -   [**Historias de usuaria**](#historias-de-usuaria)
     -   [**Arquitectura de la aplicación**](#arquitectura-de-la-aplicación)
 -   [**Diseño**](#diseño)
@@ -21,7 +21,7 @@
     -   [**Test de unidad**](#test-de-unidad)
     -   [**Test de integración**](#test-de-integración)
 -   [**Análisis del tiempo invertido**](#analisis-del-tiempo-invertido)
-    -   [**Clockify + Wakatime**](#Clockify-+-Wakatime)
+    -   [**Clockify y Wakatime**](#clockify-y-wakatime)
     -   [**Justificación temporal**](#justificación-temporal)
 -   [**Conclusiones**](#conclusiones)
     -   [**Posibles mejoras**](#posibles-mejoras)
@@ -62,7 +62,7 @@ Durante las horas de clase dedicadas al proyecto, aprovechamos el tiempo para av
 Este proyecto es una implementación digital del juego 'Quién es Quién', desarrollado en lenguaje python y utilizando Reflex, framework de Python diseñado para crear aplicaciones web de manera sencilla. Permite desarrollar la lógica y interfaz en Python. <br/>
 Además, la lógica del juego se estructura en Modelo Vista Controlador. El MVC divide la lógica en partes independientes para facilitar el desarrollo. Además, permite modificar la vista o la lógica sin afectar al resto de componentes. Estas tres partes iguales son: Modelo, encargado de gestionar la lógica como la lista de personajes la Vista, parte que el usuario ve y Controlador, que actúa como intermediario entre el modelo y la vista, recibiendo las preguntas del usuario.
 
-# Requisitos funcionales/no funcionales, NOT LIST<br/>
+# Requisitos funcionales y no funcionales NOT LIST<br/>
 La not list que elaboramos al inicio del proyecto se basa en:
 In scope<br/>
 Función para elegir carta aleatoria.<br/>
@@ -189,7 +189,7 @@ En resumen, el backend se comunica con el frontend a través de Reflex, actualiz
 # Test de integración<br/>
 *Pendiente*
 # Análisis del tiempo invertido<br/>
-# Clockify + Wakatime
+# Clockify y Wakatime
   ![grafica.png](imagenes/gráficaTrabajo.png)
 
   ![distribucion.tiempo.jpeg](imagenes/distribucion.tiempo.jpeg)
