@@ -86,8 +86,8 @@ La carta no se muestra a la jugadora.
 Cada carta sale elegida aproximadamente el mismo numero de veces que el resto.
 
 
-**Como** jugador,<br/>
-**Quiero** preguntar las características del personaje <br/>
+**Quién** jugador,<br/>
+**Qué** preguntar las características del personaje <br/>
 **Para** descartar personajes y poder adivinar.<br/>
 
 **Criterios de aceptación:**
@@ -96,8 +96,8 @@ La aplicación debe permitir hacer preguntas predefinidas para poder descartar o
 La máquina debe responder las preguntas para poder descartar.
 En función de las respuestas, bajar los personajes descartandolos para poder adivinar.
 
-**Como** jugador,<br/>
-**Quiero** adivinar el personaje de la maquina,<br/>
+**Quién** jugador,<br/>
+**Qué** adivinar el personaje de la maquina,<br/>
 **Para** ganar.<br/>
 
 **Criterios de aceptación:**
@@ -108,6 +108,61 @@ Si es correcta la respuesta, el  usuario gana.
 Si es incorrecta la respuesta, el usuario pierde y ganaría la máquina.
 
 **Arquitectura de la aplicación**
+Arquitectura de la Aplicación
+La aplicación **Juego ¿Quién es Quién?** está organizada utilizando el framework
+Reflex para construir interfaces dinámicas y reactivas. A continuación, se describe la
+arquitectura y los componentes principales:
+
+1. Estructura de Carpetas
+assets                      # Archivos estáticos (imágenes).
+__init__.py                 # Inicialización del módulo principal.
+Juego_Quien_es_Quien.py     # Componentes de la interfaz de usuario.
+state.py                    # Lógica del estado y eventos.
+style.py                    # Color y estilos para los componentes del interfaz.
+venv/                       # Entorno virtual
+README.md                   # Documentación del proyecto
+Requirements.tx.            # Dependencias.
+rxconfig.py                 # Configuración global de Reflex.
+
+
+2. Componentes Principales
+a. Estado de la Aplicación (state.py)
+Este archivo define el estado central de la aplicación utilizando las herramientas de
+Reflex. Aquí se manejan:
+ Variables de estado: Contiene la definición de los personajes y sus atributos
+en formato de una lista de diccionarios. La variable del personaje oculto con
+la ejecución. Un mensaje vacío para que pueda ser utilizado y modificado.
+Ganador False ya que el jugador comienza el juego no siendo un ganador.
+Intentos /juego iniciado false/ pregunta str /historial y personajes*por definir
+
+ Eventos: Da inicio a una partida, selecciona un personaje al azar, arroja un
+mensaje para darle inicio al juego. Gestionan la interacción del usuario, como
+hacer preguntas y obtener respuestas. Organiza las pregunta y respuestas en
+un historial tipo chat.
+
+b. Interfaz de Usuario (Juego_Quien_es_Quien.py)
+Este archivo contiene los componentes de la interfaz organizados en páginas. Se
+utiliza la biblioteca Reflex para crear elementos interactivos, como:
+ Título del juego
+ Botón que da inicio a la partida
+ Mensaje para dar aviso del inicio
+ Tablero con las cartas
+ Historial de preguntas y respuestas
+ Casilla de entrada para realizar las preguntas
+ Botón de enviar pregunta
+
+c. Estilo de los Componentes (style.py)
+Definición de color, tamaño y estilo de las preguntas y respuestas, casilla de entrada
+de preguntas y botón de enviar.
+
+3. Flujo de la Aplicación
+1. Inicio: El usuario accede a la página principal y visualiza a todos los
+personajes en una tabla.
+2. Interacción: El usuario hace clic en el botón de iniciar partida y le arroja el
+mensaje “Ha comenzado el juego”. Realiza preguntas sobre las características
+del personaje oculto utilizando un campo de entrada.
+3. Respuesta: La lógica del estado determina si la respuesta a la pregunta es
+"Sí" o "No" y responde al chat del juego.
 **Diseño**
     **Diagrama de Componentes**
 **Implementacion**
