@@ -118,27 +118,27 @@ La aplicación &quot;Juego ¿Quién es Quién?&quot; está organizada utilizando
 Reflex para construir interfaces dinámicas y reactivas. A continuación, se describe la
 arquitectura y los componentes principales:<br/>
 1. Estructura de Carpetas<br/>
-assets # Archivos estáticos (imágenes).<br/>
-__init__.py # Inicialización del módulo principal.<br/>
-Juego_Quien_es_Quien.py # Componentes de la interfaz de usuario.<br/>
-state.py # Lógica del estado y eventos.<br/>
-style.py # Color y estilos para los componentes del
+assets = Archivos estáticos (imágenes).<br/>
+__init__.py = Inicialización del módulo principal.<br/>
+Juego_Quien_es_Quien.py = Componentes de la interfaz de usuario.<br/>
+state.py = Lógica del estado y eventos.<br/>
+style.py = Color y estilos para los componentes del
 interfaz.<br/>
-venv/ # Entorno virtual<br/>
-README.md # Documentación del proyecto<br/>
-Requirements.tx. # Dependencias.<br/>
-rxconfig.py # Configuración global de Reflex.<br/>
+venv/ = Entorno virtual<br/>
+README.md = Documentación del proyecto<br/>
+Requirements.tx. = Dependencias.<br/>
+rxconfig.py = Configuración global de Reflex.<br/>
 2. Componentes Principales<br/>
 a. Estado de la Aplicación (state.py)<br/>
 Este archivo define el estado central de la aplicación utilizando las herramientas de
 Reflex. Aquí se manejan:<br/>
- Variables de estado: Contiene la definición de los personajes y sus atributos
+*Variables de estado:* Contiene la definición de los personajes y sus atributos
 en formato de una lista de diccionarios. La variable del personaje oculto con
 la ejecución. Un mensaje vacío para que pueda ser utilizado y modificado.
 Ganador False ya que el jugador comienza el juego no siendo un ganador.<br/>
 
 
- Eventos: Da inicio a una partida, selecciona un personaje al azar, arroja un
+*Eventos:* Da inicio a una partida, selecciona un personaje al azar, arroja un
 mensaje para darle inicio al juego. Gestionan la interacción del usuario, como
 hacer preguntas y obtener respuestas. Organiza las pregunta y respuestas en
 un historial tipo chat.<br/>
@@ -146,19 +146,20 @@ un historial tipo chat.<br/>
 b. Interfaz de Usuario (Juego_Quien_es_Quien.py)
 Este archivo contiene los componentes de la interfaz organizados en páginas. Se
 utiliza la biblioteca Reflex para crear elementos interactivos, como:<br/>
- Título del juego<br/>
- Botón que da inicio a la partida<br/>
- Mensaje para dar aviso del inicio<br/>
- Tablero con las cartas<br/>
- Historial de preguntas y respuestas<br/>
- Casilla de entrada para realizar las preguntas<br/>
- Botón de enviar pregunta<br/>
+*Título del juego*<br/>
+*Botón que da inicio a la partida*<br/>
+*Mensaje para dar aviso del inicio*<br/>
+*Tablero con las cartas*<br/>
+*Historial de preguntas y respuestas*<br/>
+*Casilla de entrada para realizar las preguntas*<br/>
+*Botón de enviar pregunta*<br/>
 
 c. Estilo de los Componentes (style.py)<br/>
 Definición de color, tamaño y estilo de las preguntas y respuestas, casilla de entrada
 de preguntas y botón de enviar.<br/>
 # Diseño
 # Diagrama de Componentes<br/><br/>
+![diagrama_dependencias.jpg](imagenes/diagrama_dependencias.jpg)
 # Implementacion
 # Tecnologías y Herramientas utilizadas
 
@@ -187,6 +188,10 @@ En resumen, el backend se comunica con el frontend a través de Reflex, actualiz
 # Análisis del tiempo invertido
 # Clockify + Wakatime
   ![grafica.png](imagenes/gráficaTrabajo.png)
+
+  ![distribucion.tiempo.jpeg](imagenes/distribucion.tiempo.jpeg)
+
+  ![img.jpeg](imagenes/img.jpeg)
 
 
 # Justificación temporal<br/>
