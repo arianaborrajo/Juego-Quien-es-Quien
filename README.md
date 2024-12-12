@@ -1,43 +1,43 @@
 **Tabla de contenidos**
 
--   [**Introducción**](/README.md#L31)
--   [**Manual**](/README.md#L34)
-    -   [**Requisitos previos**](/README.md#L35)
-    -   [**Instalación**](/README.md#L40)
-    -   [**Uso**](/README.md#L49)
--   [**Metodología**](/README.md#L54)
--   [**Descripción técnica**](/README.md#L61)
-    -   [**Requisitos funcionales/no funcionales, NOT LIST**](/README.md#L65)
-    -   [**Historias de usuaria**](/README.md#L81)
-    -   [**Arquitectura de la aplicación**](/README.md#L116)
--   [**Diseño**](/README.md#L160)
-    -   [**Diagrama de Componentes**](/README.md#L161)
--   [**Implementacion**](/README.md#L162)
-    -   [**Tecnologías y Herramientas utilizadas**](/README.md#L163)
-    -   [**Backend**](/README.md#L174)
-    -   [**Frontend**](/README.md#L178)
--   [**Pruebas**](/README.md#L)
-    -   [**Coverage**](/README.md#L)
-    -   [**Test de unidad**](/README.md#L)
-    -   [**Test de integración**](/README.md#L)
--   [**Análisis del tiempo invertido**](/README.md#L183)
-    -   [**Clockify + Wakatime**](/README.md#L184)
-    -   [**Justificación temporal**](/README.md#L188)
--   [**Conclusiones**](/README.md#L197)
-    -   [**Posibles mejoras**](/README.md#L209)
-    -   [**Dificultades**](/README.md#L213)
+-   [**Introducción**](#introducción)
+-   [**Manual**](#manual)
+    -   [**Pre-requisitos**](#pre-requisitos)
+    -   [**Instalación**](#instalación)
+    -   [**Uso**](#uso)
+-   [**Metodología**](#metodología)
+-   [**Descripción técnica**](#descripción-técnica)
+    -   [**Requisitos funcionales/no funcionales, NOT LIST**](#partes-interesadas-y-requisitos-funcionalesno-funcionales)
+    -   [**Historias de usuaria**](#historias-de-usuaria)
+    -   [**Arquitectura de la aplicación**](#arquitectura-de-la-aplicación)
+-   [**Diseño**](#diseño)
+    -   [**Diagrama de Componentes**](#componentes)
+-   [**Implementacion**](#implementacion)
+    -   [**Tecnologías y Herramientas utilizadas**](#tecnologías-y-herramientas-elegidas)
+    -   [**Backend**](#backend)
+    -   [**Frontend**](#frontend)
+-   [**Pruebas**](#pruebas)
+    -   [**Coverage**](#coverage)
+    -   [**Test de unidad**](#test-de-unidad)
+    -   [**Test de integración**](#test-de-integración)
+-   [**Análisis del tiempo invertido**](#Tiempo-invertido)
+    -   [**Clockify + Wakatime**](#clockify)
+    -   [**Justificación temporal**](#justificación-temporal)
+-   [**Conclusiones**](#conclusiones)
+    -   [**Posibles mejoras**](#posibles-mejoras)
+    -   [**Dificultades**](#dificultades)
 
 
-##Introducción##<br/>
+# Introducción<br/>
 En el juego "Quién es Quién" dos personas tienen que adivinar el personaje de su oponente. Cada jugador cuenta con un tablero con diferentes personajes y debe hacer preguntas para ir eliminando opciones hasta dar con el.
 
-##Manual## <br/>
-    ##Requisitos previos##<br/>
+# Manual<br/>
+    # Requisitos previos<br/>
 1- Tener Python 3.9 o superior instalado en tu sistema.<br/>
 2- Tener instalado Reflex<br/>
 3- Disponer de un editor de código como VSCode<br/>
 
-##Instalación##<br/>
+# Instalación<br/>
 1-Una vez instalado vscode y python desde la pagina oficial, se descarga el repositorio con la aplicación desde nuestro github. <br/>
 
 2-Dentro de la terminal que dispone VSCode cocamos el repositorio con el comando git clone [https://github.com/arianaborrajo/Juego-Quien-es-Quien.git].<br/>
