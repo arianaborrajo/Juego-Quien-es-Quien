@@ -1,0 +1,14 @@
+{
+    "python.testing.pytestArgs": [
+        "Juego_Quien_es_Quien"
+    ],
+    "python.testing.unittestEnabled": true,
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./Juego_Quien_es_Quien",
+        "-p",
+        "*test.py"
+    ]
+}
