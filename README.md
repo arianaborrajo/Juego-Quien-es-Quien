@@ -103,7 +103,7 @@ La máquina debe responder las preguntas para poder descartar.
 En función de las respuestas, bajar los personajes descartandolos para poder adivinar.
 
 *Quién* jugador,<br/>
-*Qué** adivinar el personaje de la maquina,<br/>
+*Qué* adivinar el personaje de la maquina,<br/>
 *Para* ganar.<br/>
 
 # Criterios de aceptación:
