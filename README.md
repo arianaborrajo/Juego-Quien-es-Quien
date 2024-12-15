@@ -225,3 +225,9 @@ Además de que, a pesar del tiempo invertido, no fuimos capaces de tener casos t
 # Dificultades<br/>
 A lo largo del desarrollo del proyecto, nos encontramos con varios desafíos que nos ayudaron a aumentar nuestros conocimientos. Algunas de las principales dificultades fueron que al principio nos costó comprender cómo organizar el proyecto correctamente, esto nos resto tiempo que hizo que se nos acumulara el trabajo y aprender a utilizar de manera practica los conceptos estudiados en clase y aplicarlos a un proyecto. <br/>
 Por otro lado, al trabajar en git, se nos presentaron múltiples problemas con las ramas porque no sabíamos gestionarlas ni bajarlas a remoto y no queríamos perder los cambios de ninguna. Relacionada con esta dificultad, nos costó un poco acostumbrarnos a la práctica de hacer commits frecuentes y bien estructurados, cometimos algunos errores en cuanto al uso de commits, ya que nos daba bastantes errores a las dos al intentar subirlos a github tanto en clase como en casa.
+
+# Uso IA<br/>
+
+Utilizamos ChatGPT versión 4. Nos dio la organización que podiamos seguir para la creación del proyecto indicandonos las prioridades minimas en la cual debiamos trabajar.
+No sabiamos por donde comenzar así que la utilizamos para organizarnos. Posteriormente ingresamos algunos errores que se nos generaba al intentar ejecutar el proyecto y según la respuesta buscabamos solucionarlo. Nos sirvió para tener a mano los comandos de git y comprender lo de las ramas.
+
