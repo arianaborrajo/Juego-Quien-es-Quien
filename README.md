@@ -26,7 +26,7 @@
 -   [**Conclusiones**](#conclusiones)
     -   [**Posibles mejoras**](#posibles-mejoras)
     -   [**Dificultades**](#dificultades)
-
+-   [**Uso de la IA**](#uso-de-la-ia)
 
 # Introducción<br/>
 En el juego "Quién es Quién" dos personas tienen que adivinar el personaje de su oponente. Cada jugador cuenta con un tablero con diferentes personajes y debe hacer preguntas para ir eliminando opciones hasta dar con el.
